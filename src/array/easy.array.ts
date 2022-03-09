@@ -17,9 +17,15 @@ export class EasyArray<T> {
         return this.isDefined() && this.value.length > 0;
     }
 
-    public ifNotEmpty(apply: () => void): void {
+    public ifNotEmptyApply(apply: () => void): void {
         if (this.isNotEmpty()) {
             apply();
+        }
+    }
+
+    public ifNotEmpty(consumer: (x: T[]) => void): void {
+        if (this.isNotEmpty()) {
+            consumer(this.value)
         }
     }
 
@@ -45,13 +51,13 @@ export class EasyArray<T> {
         return this.isDefined() && this.value.length === 1;
     }
 
-    public ifHasOneElement(apply: () => void): void {
+    public ifHasOneElementThanApply(apply: () => void): void {
         if (this.hasExactOneElement()) {
             apply();
         }
     }
 
-    public ifHasOneElementThanConsume(consumer: (T) => void): void {
+    public ifHasOneElement(consumer: (T) => void): void {
         if (this.hasExactOneElement()) {
             consumer(this.value[0]);
         }

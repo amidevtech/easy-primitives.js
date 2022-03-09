@@ -29,9 +29,15 @@ export class EasyString {
         }
     }
 
-    public ifNotEmpty(apply: () => void): void {
+    public ifNotEmptyApply(apply: () => void): void {
         if (this.isNotEmpty()) {
             apply();
+        }
+    }
+
+    public ifNotEmpty(consumer: (T) => void): void {
+        if (this.isNotEmpty()) {
+            consumer(this.value);
         }
     }
 

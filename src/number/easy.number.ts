@@ -57,49 +57,49 @@ export class EasyNumber {
         return this.isDefined() && this.value === 1;
     }
 
-    public ifPositive(apply: () => void): void {
+    public ifPositiveApply(apply: () => void): void {
         if (this.isPositive()) {
             apply();
         }
     }
 
-    public ifPositiveOrZero(apply: () => void): void {
+    public ifPositiveOrZeroApply(apply: () => void): void {
         if (this.isPositiveOrZero()) {
             apply();
         }
     }
 
-    public ifPositiveThenConsume(consumer: (number) => void): void {
+    public ifPositive(consumer: (number) => void): void {
         if (this.isPositive()) {
             consumer(this.value);
         }
     }
 
-    public ifPositiveOrZeroThenConsume(consumer: (number) => void): void {
+    public ifPositiveOrZero(consumer: (number) => void): void {
         if (this.isPositiveOrZero()) {
             consumer(this.value);
         }
     }
 
-    public ifNegative(apply: () => void): void {
+    public ifNegativeApply(apply: () => void): void {
         if (this.isNegative()) {
             apply();
         }
     }
 
-    public ifNegativeOrZero(apply: () => void): void {
+    public ifNegativeOrZeroApply(apply: () => void): void {
         if (this.isNegativeOrZero()) {
             apply();
         }
     }
 
-    public ifNegativeThenConsume(consumer: (number) => void): void {
+    public ifNegative(consumer: (number) => void): void {
         if (this.isNegative()) {
             consumer(this.value);
         }
     }
 
-    public ifNegativeOrZeroThenConsume(consumer: (number) => void): void {
+    public ifNegativeOrZero(consumer: (number) => void): void {
         if (this.isNegativeOrZero()) {
             consumer(this.value);
         }
