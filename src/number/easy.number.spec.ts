@@ -12,11 +12,5 @@ describe('EasyNumber', () => {
         let text: string = '';
         EasyNumber.of(10).ifPositive(() => (text = 'kowalski'));
         expect(text).toBe('kowalski');
-
-        text = '';
-        EasyNumber.of(10).ifPositiveThenConsume(
-            (it) => (text = 'kowalski' + it)
-        );
-        expect(text).toBe('kowalski10');
     });
 });
